@@ -1,0 +1,7 @@
+{
+    "image_dir": "C:\\Balaji\\Projects\\aud-img-to-vid\\img",
+    "audio_dir": "C:\\Balaji\\Projects\\aud-img-to-vid\\aud",
+    "video_dir": "C:\\Balaji\\Projects\\aud-img-to-vid\\vid",
+    "image_filename_template": "<<IMGNUM>>.png",
+    "imagenum_offset": "-26"
+}
