@@ -76,9 +76,7 @@ def main(config):
         total_processed_audios += 1
         print(f"Audio Number: {audio_num}")
 
-        imagenum_offset = 0
-        if 'imagenum_offset' in config:
-            imagenum_offset = default_int(config['imagenum_offset'], 0)
+        imagenum_offset = int(config['imagenum_offset'])
         
         image_num = audio_num + imagenum_offset
 
