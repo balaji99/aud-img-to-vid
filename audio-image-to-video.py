@@ -57,7 +57,7 @@ def main(config):
     processed_videos = 0
 
     # Use a list comprehension to combine glob patterns for MP3 and M4A files
-    audio_files = [file for ext in ('*.mp3', '*.m4a') for file in audio_dir.glob(ext)]
+    audio_files = [file for ext in ('*.mp3', '*.m4a', '*.wav') for file in audio_dir.glob(ext)]
 
     for audio_file in audio_files:
         print(f"Audio file: {audio_file.name}")
@@ -83,7 +83,7 @@ def main(config):
         image_num = audio_num + imagenum_offset
 
         # Generate the image filename
-        image_filename = image_filename_template.replace("<<IMGNUM>>", str(image_num))
+        image_filename = image_filename_template.replace("<<<IMGNUM>>>", str(image_num))
         print(f"Image file: {image_filename}")
 
         img_path = image_dir / image_filename
@@ -98,10 +98,13 @@ def main(config):
     print(f"Total number of audio files processed: {total_processed_audios}")
     print(f"Number of videos successfully created: {processed_videos}\n")
 
-    if total_processed_audios == processed_videos:
-        print("All audio files have been successfully processed.")
+    if total_processed_audios == 0:
+        print("No input audios found.")
     else:
-        print("Some audio files have not been processed successfully.")
+        if total_processed_audios == processed_videos:
+            print("All audio files have been successfully processed.")
+        else:
+            print("Some audio files have not been processed successfully.")
 
 
 if __name__ == "__main__":
