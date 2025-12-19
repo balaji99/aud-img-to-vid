@@ -76,9 +76,9 @@ def main(config):
         total_processed_audios += 1
         print(f"Audio Number: {audio_num}")
 
-        imagenum_offset = int(config['imagenum_offset'])
+        audio_to_image_num_offset = int(config['audio_to_image_num_offset'])
         
-        image_num = audio_num + imagenum_offset
+        image_num = audio_num + audio_to_image_num_offset
 
         # Generate the image filename
         image_filename = image_filename_template.replace("<<<IMGNUM>>>", str(image_num))
